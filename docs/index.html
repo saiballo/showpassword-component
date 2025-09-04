@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<meta charset="utf-8">
+		<title>Demo Show password</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="robots" content="noindex, nofollow">
+
+		<link rel="stylesheet" href="./assets/css/vendor.bundle.min.css">
+
+		<style>
+
+			/* funziona solo su immagine native e non custom */
+			show-password#p1::part(icon-show-path)
+			{
+				stroke:red;
+			}
+
+			show-password::part(icon-hide-path)
+			{
+				stroke:green;
+			}
+
+			show-password::part(btn-showpassword):focus-visible
+			{
+				border-color: #86b7fe;
+				box-shadow: 0 0 0 0.25rem #0d6efd40;
+			}
+
+		</style>
+
+		<script defer src="./assets/js/show-password.min.js"></script>
+		<script>
+
+			document.addEventListener("DOMContentLoaded", (e) => {
+
+				const btn = document.getElementById("p1");
+
+				btn.cbBefore = async (data) => {
+					console.log("callback before:", data);
+				};
+
+				btn.cbAfter= (data) => {
+					console.log("callback after:", data);
+				};
+
+			});
+		</script>
+
+	</head>
+
+	<body>
+
+		<h1 class="text-center mt-5">Demo Show Password</h1>
+		<h2 class="text-center mb-5 fs-5">Use keyboard (TAB and ENTER) to navigate</h2>
+
+		<div class="mt-5 border p-3 mx-auto" style="max-width: 1200px;">
+
+			<form name="form" autocomplete="off">
+
+				<fieldset>
+
+					<div class="mb-3">
+
+						<label class="w-100">Password 1
+
+							<span class="position-relative d-flex align-items-center">
+
+								<input type="password" id="password-1" name="password-1" class="form-control pe-5" autocomplete="new-password" value="ciao_mamma" required>
+
+								<show-password id="p1" target-input="#password-1"></show-password>
+
+							</span>
+
+						</label>
+
+					</div>
+
+				</fieldset>
+
+				<fieldset>
+
+					<div class="mb-3">
+
+						<label for="password-2">Password 2 <small>(richiesto)</small></label>
+
+						<div class="position-relative d-flex align-items-center">
+
+							<input type="password" id="password-2" name="password-2" class="form-control pe-5" autocomplete="new-password" value="pippo_e_pluto" required>
+
+							<show-password id="p2" icon-show="./assets/img/alternative-show.svg" icon-hide="./assets/img/alternative-hide.svg" target-input="#password-2" label-input="Password 2" status-text-shownx="ok" background-color="transparent"></show-password>
+
+						</div>
+
+					</div>
+
+				</fieldset>
+
+				<fieldset>
+
+					<button type="submit" class="btn btn-primary d-block text-uppercase w-100">
+						Invia
+					</button>
+
+				</fieldset>
+
+			</form>
+
+		</div>
+
+	</body>
+</html>
+

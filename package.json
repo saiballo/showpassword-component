@@ -1,0 +1,62 @@
+{
+	"name": "show-password",
+	"version": "1.0.0",
+	"description": "An accessible Web Component to include a \"Show password\" button in a form. By setting some parameters you can customize the styles of the component.",
+	"author": {
+		"name": "Lorenzo Saibal Forti",
+		"email": "lorenzo.forti@gmail.com"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://URL"
+	},
+	"engines": {
+		"node": ">=16.0.0"
+	},
+	"scripts": {
+		"gulp": "cross-env NODE_PREPROS=false gulp",
+		"gulp:assets:rev": "gulp revisioningAssets",
+		"gulp:assets:size": "gulp sizeAssets --silent",
+		"gulp:open": "cross-env NODE_PREPROS=false gulp --open",
+		"gulp:proxy": "cross-env NODE_PREPROS=false NODE_BROWSER_PROXY=true gulp --server=proxy",
+		"gulp:proxy:open": "cross-env NODE_PREPROS=false NODE_BROWSER_PROXY=true gulp --server=proxy --open",
+		"dev": "npm run gulp",
+		"dev:open": "npm run gulp:open",
+		"dev:proxy": "npm run gulp:proxy",
+		"dev:proxy:open": "npm run gulp:proxy:open",
+		"compile": "cross-env NODE_PREPROS=false gulp compile",
+		"compile:build": "cross-env NODE_ENV=production NODE_PREPROS=false gulp build && npm run gulp:assets:size",
+		"build": "npm run compile:build && npm run gulp:assets:rev",
+		"serve": "cross-env NODE_PREPROS=false NODE_ONLY_SERVE=true gulp serveStandalone",
+		"clean": "rm -rf ./dist/assets/css/* ./dist/assets/js/* ./dist/*.html",
+		"clean:css": "rm -rf ./dist/assets/css/*",
+		"clean:js": "rm -rf ./dist/assets/js/*",
+		"clean:all": "echo 'Sei sicuro di voler cancellare tutta la directory dist? [s/N]' && read -r risposta && [[ \"$risposta\" =~ ^[Ss]$ ]] && rm -rf dist || echo 'Operazione annullata'"
+	},
+	"devDependencies": {
+		"autoprefixer": "^10.4.21",
+		"browser-sync": "^3.0.4",
+		"cross-env": "^10.0.0",
+		"cssnano": "^7.1.1",
+		"del": "^8.0.0",
+		"esbuild": "^0.25.9",
+		"esbuild-minify-templates": "^0.13.1",
+		"esbuild-plugin-replace": "^1.4.0",
+		"fast-glob": "^3.3.3",
+		"gulp": "^5.0.1",
+		"gulp-plumber": "^1.2.1",
+		"gulp-postcss": "^10.0.0",
+		"gulp-rename": "^2.1.0",
+		"gulp-rev-all": "^4.0.0",
+		"gulp-sass": "^6.0.1",
+		"gulp-sass-glob-import": "^0.1.0",
+		"gulp-size": "^5.0.0",
+		"gulp-sourcemaps": "^3.0.0",
+		"micromatch": "^4.0.8",
+		"purgecss": "^7.0.2",
+		"sass": "^1.92.0",
+		"through2": "^4.0.2",
+		"yargs": "^18.0.0"
+	}
+}

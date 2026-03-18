@@ -5,15 +5,13 @@
 * Created: 21/07/2025 (14:15:10)
 * Created by: Lorenzo Saibal Forti <lorenzo.forti@gmail.com>
 *
-* Last update: 04/09/2025 (11:07:35)
+* Last update: 12/09/2025 (10:51:43)
 * Updated by: Lorenzo Saibal Forti <lorenzo.forti@gmail.com>
 *
 * Copyleft: 2025 - Tutti i diritti riservati
 *
 * Comments:
 */
-
-"use strict";
 
 export const defaultConfig = {
 	"targetInput": "#js-password",

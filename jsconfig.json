@@ -1,0 +1,11 @@
+{
+	"include": [
+		"**/*.js"
+	],
+	"exclude": [
+		"node_modules",
+		"docs",
+		"_bundler",
+		"0_dev"
+	]
+}

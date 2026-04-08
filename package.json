@@ -1,6 +1,6 @@
 {
 	"name": "show-password",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"description": "An accessible Web Component to include a \"Show password\" button in a form. By setting some parameters you can customize the styles of the component.",
 	"author": {
 		"name": "Lorenzo Saibal Forti",
